@@ -30,4 +30,4 @@ def hello():
         end - start
     )
     print(cluster_time)
-    return flask.jsonify({"embed_time": embed_time, "cluster_time": cluster_time})
+    return embed_time + "<br>" + cluster_time
