@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "slow-railway-example"
+version = "0.1.0"
+description = ""
+authors = ["spookyuser <spookyuser@users.noreply.github.com>"]
+readme = "README.md"
+packages = [{include = "slow_railway_example"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

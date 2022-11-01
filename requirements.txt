@@ -38,3 +38,5 @@ transformers==4.23.1
 typing_extensions==4.4.0
 umap-learn==0.5.3
 urllib3==1.26.12
+flask
+gunicorn

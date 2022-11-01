@@ -10,4 +10,4 @@ RUN pip install -r requirements.txt
 
 RUN python -c 'from sentence_transformers import SentenceTransformer; embedder = SentenceTransformer("all-mpnet-base-v2")' 
 
-CMD [ "python", "main.py" ]
+CMD ["gunicorn", "--bind", ":$PORT", "--timeout", "0", "main:app"]
