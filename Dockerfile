@@ -5,10 +5,10 @@ RUN useradd --create-home appuser
 USER appuser
 WORKDIR /home/appuser
 
-RUN mkdir /app
-COPY requirements.txt /app
-COPY main.py /app
-WORKDIR /app
+RUN mkdir app
+COPY requirements.txt app
+COPY main.py app
+WORKDIR app
 
 RUN pip install -r requirements.txt --no-cache-dir
 
