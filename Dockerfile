@@ -10,4 +10,4 @@ RUN pip install -r requirements.txt --no-cache-dir
 
 RUN python -c 'from sentence_transformers import SentenceTransformer; embedder = SentenceTransformer("all-mpnet-base-v2")' 
 
-CMD ["gunicorn", "--bind", ":$PORT", "--timeout", "0", "main:app"]
+CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 main:app
