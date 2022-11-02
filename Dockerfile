@@ -1,5 +1,9 @@
 # Stage 1. Get pydeps
-FROM python:3.10.6 as base
+FROM python:3.10.6
+
+RUN useradd --create-home appuser
+USER appuser
+WORKDIR /home/appuser
 
 RUN mkdir /app
 COPY requirements.txt /app
