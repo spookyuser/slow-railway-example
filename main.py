@@ -5,14 +5,14 @@ from sentence_transformers import SentenceTransformer
 from sklearn.datasets import fetch_20newsgroups
 
 docs = fetch_20newsgroups(subset="all", remove=("headers", "footers", "quotes"))
-docs = docs.data[:1000]
+docs = docs.data[:500]
 sentence_model = SentenceTransformer("all-mpnet-base-v2")
 import flask
 
 app = flask.Flask(__name__)
 
 
-@app.route("/")
+@app.route("/bench")
 def hello():
     # Crete embeddings
     start = time.time()
